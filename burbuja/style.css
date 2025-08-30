@@ -1,0 +1,82 @@
+#lista{
+    display: flex;
+    gap: 20px;
+    text-decoration: none;
+    list-style: none;
+    color: red;
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+}
+#burb{
+    width: fit-content;
+    height: 680px;
+    background-color: rgba(128, 128, 128, 0.479);
+    margin: 0 auto;
+    display: flex;
+    justify-content:start;
+    align-items:end;
+    gap: 40px;
+    padding-left:20px;
+    padding-right:20px ;
+}
+div{
+    transition: background-color, 0.3s;
+}
+.div-seleccionado{
+    background-color: orange !important;
+}
+.div-azul{
+    background-color: blue !important;
+    color: aliceblue;
+    animation-name: desplazamiento;
+    animation-timing-function: linear;
+     animation-duration: 0.5s;
+     /*Para que se quede dónde se animó*/
+     animation-fill-mode: forwards;
+}
+
+@keyframes desplazamiento {
+  0% {
+    transform: translateX(0px);
+    background-color: blue;
+  }
+  50% {
+    transform: translateX(35px);
+    background-color: blue;
+  }
+  100% {
+    transform: translateX(60px);
+    background-color: red; /* se va interpolando, no salta */
+  }
+}
+.div-verde{
+    background-color: green !important;
+     animation-name: desplazamiento-inverso;
+    animation-timing-function: linear;
+     animation-duration: 0.5s;
+       /*Para que se quede dónde se animó*/
+     animation-fill-mode: forwards;
+}
+@keyframes desplazamiento-inverso{
+    /*Como empieza la animación*/
+    0%{
+       transform: translateX(-0px);
+    }
+    /*Como termina*/
+    50%{
+       transform: translateX(-30px);
+    }
+    100%{
+        transform: translateX(-65px);
+        background-color: red!important;
+    }
+}
+.cnt{
+    background-color: red;
+    width: fit-content;
+    min-width: 20px;
+    max-height: 100%;
+    min-height: 5%;
+}

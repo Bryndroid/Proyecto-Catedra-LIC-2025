@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordena GX | BurbujaV2</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header id = "header-content">
+        <div class = "title">
+            <h1 class = "title-txt">Ordena GX | BurbujaV2</h1>
+        </div>
+        <div class ="space">
+
+        </div>
+        <div class ="buttons-content">
+            <div class = "namespace-content">
+                <h3>Proyecto Catedra LIC-2025</h3>
+            </div>
+            <i class="fa-solid fa-address-card"></i>
+            <!--Para cambiar de color dependiendoo si es modo noche o día-->
+            <div class ="moon-sun">
+                <i class="fa-solid fa-moon"></i>
+            </div>
+        </div>
+    </header>
+    <main id ="main-content">
+        <section id = "description-content">
+            <h2>Metodo de BurbujaV2</h2>
+            <p>El método de Burbuja Bidireccional, también conocido como Cocktail Shaker Sort, es una variación del algoritmo de burbuja tradicional.  A diferencia de este último, que solo recorre la lista en una dirección, la versión bidireccional realiza pasadas en ambas direcciones: primero de izquierda a derecha y luego de derecha a izquierda. Esto permite que los elementos pequeños “suban” al inicio y los grandes “bajen” al final en cada iteración, reduciendo el número de comparaciones en ciertos casos.</p>
+        </section>
+        <section id = "diagram-content">
+            <section id = "config-content">
+                <div class = "title-content">
+                    <h5>Configuraciones</h5>
+                </div>
+                <div class ="radiobox-content">
+                    <form>
+                        <label for="velotxt">Velocidad:</label>
+                        <input type="range" id="velotxt" name="velotxt" min="1" max="100" step="5" value="50">
+                        <span class ="placeholder-txt">Velocidad de ordenamiento</span>
+
+                        <label for="datostxt">Datos:</label>
+                        <input type="range" id="datostxt" name="datostxt" min="3" max="10" step="1" value="15">
+                        <span class ="placeholder-txt">Cantidad de datos a ordenar (min. 3)</span>
+                    </form>
+                </div>
+                <button id ="randomBtn">Aleatorio</button>
+                <button id = "sortBtn">Desordenar</button>
+            </section>
+            <section id = "graphic-content">
+            
+            </section>
+            <section id = "buttons-content">
+                <div class ="input-content">
+                    <p>Ingrese un valor...</p>
+                    <input type ="number" min ="-200" max ="200" placeholder="1.. 2.. 3.. etc.">
+                </div>
+                <div class = "init-content">
+                    <div class = "btn-content">
+                        <button id= "leftBtn"><i class="fa-solid fa-angle-left"></i></button>
+                        <div class = "space">
+                        </div>
+                        <button id ="startbtn">Iniciar</button>
+                        <div class = "space">
+                        </div>
+                        <button id= "leftBtn"><i class="fa-solid fa-angle-right"></i></button>
+                    </div>
+                    <div class ="progress-content">
+                        <p>Progreso</p>
+                        <input type="range" id="rangotxt" name="rangotxt" min="0" max="100" step="1" value="0">
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+    <footer id = "footer-content">
+        <div class ="integrantes-content-footer">
+            <h5>Desarolladores</h5>
+            <ul>
+                <li>Bryan Josué Fuentes Molina</li>
+                <li>Adal Isaac Carcamo Sanchez</li>
+                <li>Hector Vicenzo Rodriguez Vaquerano</li>
+                <li>Fernando Jose Lopez Dominguez</li>
+                <li>Inmer Sebastian Hernandez Contreras</li>
+            </ul>
+        </div>
+        <div class = "udb-image">
+
+        </div>
+        <div class ="text-content-footer">
+            <span>
+                El presente proyecto consiste en el desarrollo de una página web interactiva cuyo objetivo principal es ilustrar, de manera didáctica y visual, el funcionamiento de diversos algoritmos de ordenamiento. La plataforma fue diseñada para el proyecto de catedra para la materia de Lenguaje interpretado en el Cliente, esperemos aprendan :)
+            </span>
+        </div>
+
+    </footer>
+</body>
+</html>

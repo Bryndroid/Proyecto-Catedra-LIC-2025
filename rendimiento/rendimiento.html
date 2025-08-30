@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordena GX | Quicksort</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header id = "header-content">
+        <div class = "title">
+            <h1 class = "title-txt">Ordena GX | Quicksort</h1>
+        </div>
+        <div class ="space">
+
+        </div>
+        <div class ="buttons-content">
+            <div class = "namespace-content">
+                <h3>Proyecto Catedra LIC-2025</h3>
+            </div>
+            <i class="fa-solid fa-address-card"></i>
+            <!--Para cambiar de color dependiendoo si es modo noche o día-->
+            <div class ="moon-sun">
+                <i class="fa-solid fa-moon"></i>
+            </div>
+        </div>
+    </header>
+    <main id ="main-content">
+        <section id = "description-content">
+            <h2>Prueba de rendimiento</h2>
+            <p>En esta sección se ejecutarán de forma simultánea los diferentes métodos de ordenamiento (Burbuja, Burbuja V2, Selección, Inserción y Quicksort) sobre la misma lista de datos.
+El objetivo es visualizar cuál algoritmo logra ordenar más rápido y comparar su desempeño en tiempo de ejecución y número de operaciones.</p>
+        </section>
+        <section id = "diagram-content">
+            <!--Contenido a mostrar por cada algoritmo: Se va a dejar un array de datos qque por medio de JS se imprimirá con formato en su div correspondiente-->
+            <section id = "graphic-content">
+                <div class ="burbContent">
+                </div>
+                <div class = "burbV2Content">
+                </div>
+                <div class ="inserContent"></div>
+                <div class ="quickContent"></div>
+                <div class ="rendContent"></div>
+                <div class ="seleContent"></div>
+                
+            </section>
+            <section id ="metricas-content">
+                <!--Igualmente a coomo en el anterior paso, se irá llenando por medio de JS.-->
+                <table>
+                    <tr></tr>
+                </table>
+            </section>
+            <section id = "buttons-content">
+                <div class = "init-content">
+                    <div class = "btn-content">
+                        <button id= "leftBtn"><i class="fa-solid fa-angle-left"></i></button>
+                        <div class = "space">
+                        </div>
+                        <button id ="startbtn">Iniciar</button>
+                        <div class = "space">
+                        </div>
+                        <button id= "leftBtn"><i class="fa-solid fa-angle-right"></i></button>
+                    </div>
+                    <div class ="progress-content">
+                        <p>Progreso</p>
+                        <input type="range" id="rangotxt" name="rangotxt" min="0" max="100" step="1" value="0">
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+    <footer id = "footer-content">
+        <div class ="integrantes-content-footer">
+            <h5>Desarolladores</h5>
+            <ul>
+                <li>Bryan Josué Fuentes Molina</li>
+                <li>Adal Isaac Carcamo Sanchez</li>
+                <li>Hector Vicenzo Rodriguez Vaquerano</li>
+                <li>Fernando Jose Lopez Dominguez</li>
+                <li>Inmer Sebastian Hernandez Contreras</li>
+            </ul>
+        </div>
+        <div class = "udb-image">
+
+        </div>
+        <div class ="text-content-footer">
+            <span>
+                El presente proyecto consiste en el desarrollo de una página web interactiva cuyo objetivo principal es ilustrar, de manera didáctica y visual, el funcionamiento de diversos algoritmos de ordenamiento. La plataforma fue diseñada para el proyecto de catedra para la materia de Lenguaje interpretado en el Cliente, esperemos aprendan :)
+            </span>
+        </div>
+
+    </footer>
+</body>
+</html>
