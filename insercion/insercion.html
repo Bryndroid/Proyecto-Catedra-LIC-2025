@@ -7,6 +7,7 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+  
     <header id = "header-content">
         <div class = "title">
             <h1 class = "title-txt">Ordena GX | Insercions</h1>
@@ -26,10 +27,12 @@
         </div>
     </header>
     <main id ="main-content">
+        <!-- Descripción detallada del funcionamiento del código-->
         <section id = "description-content">
             <h2>Metodo de Insercion</h2>
             <p>El ordenamiento por inserción itera a través de un array y, en cada iteración, elimina un elemento, encuentra su ubicación y lo inserta. Si bien tiene una complejidad temporal promedio de O(n²), su rendimiento es excepcional en arrays pequeños o casi ordenados, con un rendimiento óptimo de O(n). El ordenamiento por inserción es un algoritmo adaptativo, estable e in situ que funciona de forma similar a cómo se ordenan las cartas en la mano.</p>
         </section>
+        <!-- Grafico para visualizar el contenido en el array.  También para el ordenamiento del mismo-->
         <section id = "diagram-content">
             <section id = "config-content">
                 <div class = "title-content">
@@ -49,15 +52,18 @@
                 <button id ="randomBtn">Aleatorio</button>
                 <button id = "sortBtn">Desordenar</button>
             </section>
+            <!-- Acá se va a dibujar TODO -->
             <section id = "graphic-content">
             
             </section>
+            <!-- Sección para la parte de configuraciones del gráfico-->
             <section id = "buttons-content">
                 <div class ="input-content">
                     <p>Ingrese un valor...</p>
                     <input type ="number" min ="-200" max ="200" placeholder="1.. 2.. 3.. etc.">
                 </div>
                 <div class = "init-content">
+                    <!-- Apartado para las metricas del ordenamiento-->
                     <div class = "btn-content">
                         <button id= "leftBtn"><i class="fa-solid fa-angle-left"></i></button>
                         <div class = "space">
