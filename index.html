@@ -6,7 +6,11 @@
     <title>Ordena GX</title>
     <!--Fontawesome para Iconos-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    <link rel="stylesheet" href="style.css">
+    <!--Global style-->
+    <link rel="stylesheet" href="globalStyle.css">
+    <!-- Development version -->
+ <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
 <body>
     <!-- =================== CABECERA =================== -->
@@ -16,16 +20,15 @@
             <h1 class = "title-txt">Ordena GX</h1>
         </div>
         <div class ="space">
-
         </div>
         <div class ="buttons-content"><!-- Contenedor para iconos y la materia del proyecto-->
             <div class = "namespace-content">
                 <h3>Proyecto Catedra LIC-2025</h3>
             </div>
-            <i class="fa-solid fa-address-card"></i>
+            <i  class = "icon-headers" data-lucide="user-round-search"></i>
             <!--Para cambiar de color dependiendoo si es modo noche o día-->
             <div class ="moon-sun">
-                <i class="fa-solid fa-moon"></i>
+                <i class = "icon-headers" data-lucide="eclipse"></i>
             </div>
         </div>
     </header>
@@ -38,11 +41,11 @@
                 <h2>Algoritmos de Ordenamiento</h2>
             </div>
             <div class = "main-text">
-                <p>Del Caos al ORDEN: Algoritmos de ordenamiento explicado y puestos en prueba</p>
+                <p>Del Caos al <span>ORDEN</span> Algoritmos de ordenamiento explicado y puestos en prueba</p>
             </div>
         </section>
         <!-- Sección de tarjetas con los algoritmos -->
-        <section id = "main-content">
+        <section id = "main-content-section">
             <!-- Contenedor para las cartas -->
             <section id  ="cards-content">
                 <div class = "card">
@@ -53,6 +56,9 @@
                         <p>Burbuja unidireccional con 10 datos</p>
                     </article>
                     <a href = "burbuja/burbuja.html"><button id = "button-ej1">Visualizar</button></a>
+                    <div class = "content-i">
+                        <i class ="icon-card" data-lucide="bubbles"></i>
+                    </div>
                 </div>
                 <div class = "card">
                     <article>
@@ -62,6 +68,9 @@
                         <p>Burbuja bidireccional con 10 datos</p>
                     </article>
                     <a href = "burbujaV2/burbujaV2.html"><button id = "button-ej1">Visualizar</button></a>
+                    <div class = "content-i">
+                        <i class ="icon-card" data-lucide="arrow-left-right"></i>
+                    </div>
                 </div>
                 <div class = "card">
                     <article>
@@ -71,6 +80,9 @@
                         <p>Quicksort tradicional con 15 datos</p>
                     </article>
                     <a href = "insercion/insercion.html"><button id = "button-ej1">Visualizar</button></a>
+                    <div class = "content-i">
+                        <i class ="icon-card" data-lucide="user-star"></i>
+                    </div>
                 </div>
                  <div class = "card">
                     <article>
@@ -80,6 +92,9 @@
                         <p>Seleccion de una lista de 10 datos</p>
                     </article>
                     <a href = "seleccion/seleccion.html"><button id = "button-ej1">Visualizar</button></a>
+                    <div class = "content-i">
+                        <i class ="icon-card" data-lucide="list-start"></i>
+                    </div>
                 </div>
                 <div class = "card">
                     <article>
@@ -89,6 +104,9 @@
                         <p>Se pondran a prueba cada algoritmo con una lista de 8 datos</p>
                     </article>
                     <a href = "rendimiento/rendimiento.html"><button id = "button-ej1">Visualizar</button></a>
+                    <div class = "content-i">
+                        <i class ="icon-card" data-lucide="book-open-check"></i>
+                    </div>
                 </div>
                  <div class = "card">
                     <article>
@@ -98,6 +116,9 @@
                         <p>Selección de una lista de 10 datos</p>
                     </article>
                     <a href = "insercion/insercion.html"><button id = "button-ej1">Visualizar</button></a>
+                    <div class = "content-i">
+                        <i class ="icon-card" data-lucide="list-ordered"></i>
+                    </div>
                 </div>
             </section>
         </section>
@@ -117,7 +138,7 @@
             </ul>
         </div>
         <div class = "udb-image">
-
+            <img src = "icons-image/UDB_gris_horizontal.png">
         </div>
         <div class ="text-content-footer">
             <span>
@@ -126,5 +147,9 @@
         </div>
 
     </footer>
+     <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
 </html>
