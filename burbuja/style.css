@@ -80,3 +80,104 @@ div{
     max-height: 100%;
     min-height: 5%;
 }
+
+/*------------ESTILOS-----------*/
+#main-content{
+  background-color: #06828F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap:10px;
+  padding: 15px;
+  padding-top: 35px;
+}
+#description-content{
+  text-align: center;
+  line-height: 1.2;
+  background-color: #FFFFFF;
+  width: 80%;
+  padding: 25px;
+  border-radius:10px;
+}
+#description-content h2{
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#description-content p{
+  font-size: 20px;
+}
+
+#diagram-content{
+  width: 100%;
+  display: flex;
+  gap:10px;
+}
+
+#config-content{
+  background-color: #78CBE2;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.title-content h5{
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Estilo del contenedor si lo necesitas */
+label, input, .placeholder-txt {
+    display: block;
+    margin-bottom: 8px;
+    font-family: Arial, sans-serif;
+}
+
+
+#velotxt, #datostxt {
+    -webkit-appearance: none; 
+    width: 100%;
+    height: 8px;
+    background: #b3e0ff;  
+    border-radius: 5px;
+    outline: none;
+    margin: 10px 0;
+}
+
+
+#velotxt::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #000; 
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #555;
+}
+#datostxt::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #000; 
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #555;
+ 
+}
+#velotxt::-webkit-slider-thumb:hover {
+  background: #333;
+}
+
+
+
+.placeholder-txt {
+  font-size: 0.9em;
+  color: #444;
+}
+
+.radiobox-content{
+  padding: 20px;
+}
