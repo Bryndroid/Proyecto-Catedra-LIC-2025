@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ordena GX | Seleccion</title>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+      <!--GlobalStyle para el header y footer-->
+     <link rel="stylesheet" href="../globalStyle.css">
 </head>
 <body>
     <header id = "header-content">
@@ -18,10 +20,10 @@
             <div class = "namespace-content">
                 <h3>Proyecto Catedra LIC-2025</h3>
             </div>
-            <i class="fa-solid fa-address-card"></i>
+             <i  class = "icon-headers" data-lucide="user-round-search"></i>
             <!--Para cambiar de color dependiendoo si es modo noche o día-->
             <div class ="moon-sun">
-                <i class="fa-solid fa-moon"></i>
+                <i class = "icon-headers" data-lucide="eclipse"></i>
             </div>
         </div>
     </header>
@@ -97,5 +99,9 @@ Sin embargo, su complejidad temporal de O(n²) lo vuelve ineficiente para conjun
         </div>
 
     </footer>
+     <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
 </html>

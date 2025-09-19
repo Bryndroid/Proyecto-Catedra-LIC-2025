@@ -59,3 +59,30 @@ a{
     gap: 25px;
 }
 
+#footer-content{
+    width: 100%;
+    height: fit-content;
+    background-color: #524d4d;
+background-image: url("https://www.transparenttextures.com/patterns/black-paper.png");
+display: flex;
+padding: 20px;
+align-items: center;
+}
+.udb-image{
+    width: 100%;
+    height:19em;
+}
+.integrantes-content-footer{
+    width:60%;
+}
+.integrantes-content-footer h5{
+    font-weight: bold;
+    font-size: large;
+    padding-bottom: 10px;
+}
+li{
+    font-style: italic;
+}
+.text-content-footer{
+    width: 40%;
+}
