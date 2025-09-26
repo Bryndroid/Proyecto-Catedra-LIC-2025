@@ -2,7 +2,7 @@
 //ARRAY CONTENEDOR
 let numerosBurbuja  =[1,16,22,34,44444,512,69,80 ,44444,512,69,80];
 //LIENZO
-let main = document.getElementById("burb");
+let main = document.getElementById("graphic-content");
 //VARIABLES DE CONTROL
 let cadena = "";
 var idTimeou;
@@ -17,6 +17,8 @@ var iteracion = 0;
 var tiempoSecond = 0;
 var  relevoTiempo = 0;
 let pausado = false;
+let estados = [];
+let snapShots = 0;
 let continuar; //resolverá la promesa cuando se reanude
 //---------------------------- BURBUJA --------------------------//
 //Metodo de ordenamiento para ver el total de iteracioness
@@ -135,7 +137,8 @@ function dibujar(){
    
 }
 function limpiartodo(){
-    progressBar(0);
+    if(iteracion == 0)
+    progressBar(iteracion);
     tiempoSecond = 0;
     document.querySelector("#tiempoText").innerHTML = tiempoSecond + " segundos"
 }
@@ -150,10 +153,8 @@ function desordenar(){
     }
 }
 function progressBar(valor){
-    console.log("Valor: " + valor  +  " Total Iteraciones: " + totalIteraciones);
     const porcentaje  = (valor / totalIteraciones) * 100;
     const divPorcentaje = document.querySelector(".progressBar");
-    console.log(porcentaje);
     divPorcentaje.style.width = porcentaje + "%";
 
 }
@@ -170,7 +171,7 @@ async function Iniciar(boton1, boton2, boton3, boton4, input) {
     boton3.disabled = true;
     input.disabled = true;
     boton4.disabled = false;
-    BurbujaIteraciones();
+    console.log(totalIteraciones  + "dentro de iniciar")
     await Burbuja();
     clearInterval(idTimeo3);
      boton1.disabled =  false;
@@ -186,16 +187,14 @@ let botonAleatorio =document.querySelector("#randomBtn");
 let stopBoton =  document.querySelector("#stopBtn");
 let inputVelo = document.querySelector("#velotxt");
 let inputDatos = document.querySelector("#datostxt");
-//Div del modal
-let divModal = document.querySelector("#container-modal");
-let inputModal = document.querySelector("#inputNumber");
+let txtDatos = document.querySelector("#txtDatos");
 //---------------INPUTS---------
 botonDesordenar.addEventListener("click",()=>{
     desordenar();
     //Siempre limpiar los timeOut por rendimiento y por bugs xd
     clearTimeout(idTimeou);
     clearTimeout(idTimeo2);
-    dibujar()
+   inicializadores();
 });
 
 inputVelo.addEventListener("change", ()=>{
@@ -216,7 +215,7 @@ inputDatos.addEventListener("change", ()=>{
             }
         }
     }
-    dibujar();
+   inicializadores();
 });
 botonStart.addEventListener("click",()=>{
     //Aca se va a agregar el codigo bueno de visualización
@@ -228,7 +227,7 @@ botonAleatorio.addEventListener("click", ()=>{
     limpiartodo();
     clearTimeout(idTimeou);
     clearTimeout(idTimeo2);
-    dibujar();
+    inicializadores();
 });
 
 stopBoton.addEventListener("click",  function(){
@@ -260,10 +259,7 @@ stopBoton.addEventListener("click",  function(){
         }
     }
 }); */
-
-//Después de dibujar: 
-//SSon todos los divs cnt
-
+//----------------------FUNCIONES  IMPORTANTES------------------
 function CambiarValor(valorAnterior, valorNuevo){
     for(let i = 0; i < numerosBurbuja.length; i++){
         if(numerosBurbuja[i] == valorAnterior){
@@ -271,25 +267,48 @@ function CambiarValor(valorAnterior, valorNuevo){
             return;
         }
     }
+    inicializadores();
+}
+function precomputarBurbuja() {
+    estados = [];
+    let copia = [...numerosBurbuja];
+    estados = [ [...copia] ]; //Guardo un ARRAY de numeros burbuja en CADA estado 
+
+    let n = copia.length;
+    for (let k = 1; k < n; k++) {
+        for (let i = 0; i < (n - k); i++) {
+            if (copia[i] > copia[i + 1]) {
+                [copia[i], copia[i+1]] = [copia[i+1], copia[i]];
+            }
+            estados.push([...copia]); // guardar snapshot en cada paso
+        }
+    }
+    snapShots = estados.length;
+}
+function porcentajeClick(evento, div){
+    //Obtener EXACTAMENTE dónde hizo click en EL DIV CONTAINER
+    let widthContainer = evento.clientX - div.getBoundingClientRect().left;
+    let widthBar =  div.offsetWidth;
+    const porcentaje = (widthContainer / widthBar) *100;
+    // Calcular en qué snapshot deberíamos estar redondeando hacia ABAJO
+    let index = Math.floor((porcentaje / 100) * (snapShots - 1));
+    numerosBurbuja = [...estados[index]];
+    console.log(totalIteraciones  + "dentro de porcentajeClick");
+    iteracion = Math.floor((porcentaje / 100) * totalIteraciones);
+    progressBar(iteracion);
+    dibujar();
+
+}
+txtDatos.addEventListener("blur", ()=>{
+    if(numerosBurbuja.length <12)
+    {
+        numerosBurbuja.push(parseInt(txtDatos.value));
+        inicializadores();
+    }
+})
+function inicializadores(){
+    BurbujaIteraciones();
+    precomputarBurbuja();
     dibujar();
 }
-function eventoChange(valorDiv){
-    document.querySelector("#cambioBtn").addEventListener("click",()=>{
-    valorCustom = parseInt(inputModal.value);
-    CambiarValor(valorDiv, valorCustom);
-});
-}
-document.querySelector("#cambioBtn").addEventListener("click",()=>{
-    valorCustom = parseInt(inputModal.value);
-    CambiarValor(valorDiv,valorCustom);
-});
-//Funciones para la modal
-document.querySelector("#closeModal").addEventListener("click", ()=>{
-    divModal.style.display = "none";
-});
-
-
-
-
-//Declaraciones: Para dibujar los divs iniciales (TODOS SE VAN A PRE CARGAR CON VALORES MULTIPLOS DE 10)
-dibujar();
+inicializadores();

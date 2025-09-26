@@ -31,7 +31,7 @@
 
   <header id = "header-content">
         <div class = "title">
-            <h1 class = "title-txt">Ordena GX | asdfasdfasd</h1>
+            <h1 class = "title-txt">Ordena GX | Burbuja</h1>
         </div>
         <div class ="space">
 
@@ -76,24 +76,17 @@
                 <button id = "stopBtn" disabled>Parar</button>
             </section>
             <section id = "container-graphic">
+                <!--Dónde se va a imprimir todo-->
                 <section id = "graphic-content">
-                    <!--Dónde se va a imprimir todo-->
-                    <main id = "burb">
-                    </main>
+                    
                 </section>
                 <section id = "buttons-content">
-                    <!-- QUE ESTO SEA UNA MODAL :O-->
-                   <div class="modal" id="container-modal">
-                        <div class="input-content">
-                            <span class="close-btn" id="closeModal">&times;</span>
-                            
-                            <p>Ingrese un valor...</p>
-                            <input type="number"id = "inputNumber" min="-200" max="200" placeholder="1.. 2.. 3.. etc.">
-                            <button id ="cambioBtn">Aplicar</button>
-                        </div>
-                    </div>
                     
                     <div class = "init-content">
+                        <div class ="input-content">
+                            <p>Ingrese un valor...</p>
+                            <input type ="number" id = "txtDatos" min ="-200" max ="200" placeholder="1.. 2.. 3.. etc.">
+                        </div>
                         <div class = "btn-content">
                             <button id= "leftBtn"><i class="fa-solid fa-angle-left"></i></button>
                             <div class = "space">
@@ -109,9 +102,9 @@
                                 <span id = "tiempoText">0 segundos</span>
                             </div>
                             <div class = "progressBarContent">
-                                <div class = "progressBar">
+                                <div class = "progressBar" onclick = "porcentajeClick(event, document.querySelector('.progressBar'))">
                                 </div>
-                                <div class = "progressBarBack">
+                                <div class = "progressBarBack" onclick = "porcentajeClick(event, document.querySelector('.progressBarBack'))">
 
                                 </div>
                             </div>
