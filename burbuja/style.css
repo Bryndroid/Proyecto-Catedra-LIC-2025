@@ -29,7 +29,7 @@ div{
 }
 .div-azul{
     background-color: blue !important;
-    color: aliceblue;
+    color: aliceblue !important;
     animation-name: desplazamiento;
     animation-timing-function: linear;
      animation-duration: 0.5s;
@@ -43,11 +43,11 @@ div{
     background-color: blue;
   }
   50% {
-    transform: translateX(35px);
+    transform: translateX(40px);
     background-color: blue;
   }
   100% {
-    transform: translateX(60px);
+    transform: translateX(75px);
     background-color: red; /* se va interpolando, no salta */
   }
 }
@@ -66,20 +66,15 @@ div{
     }
     /*Como termina*/
     50%{
-       transform: translateX(-30px);
+       transform: translateX(-40px);
     }
     100%{
-        transform: translateX(-65px);
+        transform: translateX(-75px);
         background-color: red!important;
     }
 }
 .cnt{
-    background-color: red;
-    width: fit-content;
-    min-width: 20px;
-    max-height: 100%;
-    min-height: 5%;
-    text-overflow:ellipsis;
+   
 }
 .textoGraphic{
   width: 100%;
@@ -87,22 +82,33 @@ div{
 
 /*------------ESTILOS-----------*/
 #main-content{
+
   background-color: #06828F;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   gap:10px;
   padding: 15px;
   padding-top: 35px;
+  padding-bottom: 100px;
 }
 #description-content{
-  text-align: center;
+  background: #fff;
+	color: #23264a;
+	border-radius: 16px;
+	box-shadow: 0 4px 16px 0 rgba(0,0,0,0.07);
+	padding: 32px 40px;
+	margin-bottom: 36px;
+	text-align: center;
+	max-width: 1000px;
+  /* text-align: center;
   line-height: 1.2;
   background-color: #FFFFFF;
   width: 80%;
   padding: 25px;
-  border-radius:10px;
+  border-radius:10px; */
 }
 #description-content h2{
   font-size: 32px;
@@ -115,23 +121,38 @@ div{
 }
 
 #diagram-content{
-  width: 100%;
+  display: flex;
+	gap: 40px;
+	align-items:center;
+	justify-content: center;
+  flex-wrap: wrap;
+	width: 100%;
+  /* width: 100%;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 
-  gap:10px;
+  gap:10px; */
 }
 
 #config-content{
   background-color: #78CBE2;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  border-radius: 18px;
+	padding: 36px 36px;
+	min-width: 340px;
+	max-width: 440px;
+	flex: 1 1 340px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	box-shadow: 0 6px 24px 0 rgba(0,0,0,0.13);
 }
 .title-content h5{
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 1.3rem;
+	font-weight: 700;
+	margin-bottom: 18px;
+	color: #fff;
+	text-shadow: 0 2px 8px #23264a;
 }
 
 label, input, .placeholder-txt {
@@ -176,9 +197,13 @@ label, input, .placeholder-txt {
 #velotxt::-webkit-slider-thumb:hover {
   background: #333;
 }
+/*Este para responsive que abarque el 100% de width*/
 #container-graphic{
-  width: fit-content;
-  height: fit-content;
+  width:60%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .placeholder-txt {
@@ -193,7 +218,12 @@ form{
 }
 
 .radiobox-content{
-  padding: 20px;
+  width: 100%;
+	margin-bottom: 18px;
+}
+.radiobox-content label {
+	font-weight: 600;
+	color: #fff;
 }
 #config-content{
   padding: 20px;
@@ -221,10 +251,42 @@ form{
 }
 /*------------------------------------*/
 #graphic-content{
-  width: 70vw;
-  height: fit-content;
-  background-color: rgba(240, 248, 255, 0.733);
-  border-radius: 10px;
+  background: #fff;
+	border-radius: 18px;
+	box-shadow: 0 6px 24px 0 rgba(59,62,109,0.13);
+	padding: 36px 28px 28px 28px;
+	min-width: 340px;
+	max-width: 100%;
+	width: 100%;
+	height: 320px;
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-start;
+	gap: 18px;
+	overflow-x: auto;
+	overflow-y: hidden;
+	margin-bottom: 24px;
+}
+/*--------ESTILO PARA LOS CONTENEDORES ------------*/
+#graphic-content > div {
+	min-width: 32px;
+	max-width: 56px;
+	border-radius: 10px 10px 0 0;
+	margin: 0 3px;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	font-size: 1rem;
+	font-weight: 700;
+	color: #23264a;
+	background: #6ee7b7;
+	box-shadow: 0 2px 8px 0 rgba(59,62,109,0.08);
+	transition: background-color 0.3s, box-shadow 0.2s;
+	overflow: hidden;
+  min-height: 20px;
+	height: auto;
+	flex: 1 1 auto;
+	max-height: 100%;
 }
 #buttons-content{
   display: flex;
@@ -238,12 +300,13 @@ form{
 }
 .input-content{
   background-color: aliceblue;
-  width: fit-content;
+  width: 100%;
   padding: 20px;
   border-radius: 20px;
   position: relative;
-  display: block;
-  margin: 20% auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 .input-content input{
   width: 20%;

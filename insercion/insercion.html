@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ordena GX | Inserción</title>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-      <!--GlobalStyle para el header y footer-->
+    <!--GlobalStyle para el header y footer-->
      <link rel="stylesheet" href="../globalStyle.css">
+     <link rel="stylesheet" href="style.css">
+      <!-- Development version -->
+ <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
 <body>
-  
-    <header id = "header-content">
+  <header id = "header-content">
         <div class = "title">
-            <h1 class = "title-txt">Ordena GX | Insercions</h1>
+            <h1 class = "title-txt">Ordena GX | Inserción</h1>
         </div>
         <div class ="space">
 
@@ -21,7 +23,7 @@
             <div class = "namespace-content">
                 <h3>Proyecto Catedra LIC-2025</h3>
             </div>
-              <i  class = "icon-headers" data-lucide="user-round-search"></i>
+             <i  class = "icon-headers" data-lucide="user-round-search"></i>
             <!--Para cambiar de color dependiendoo si es modo noche o día-->
             <div class ="moon-sun">
                 <i class = "icon-headers" data-lucide="eclipse"></i>
@@ -29,12 +31,10 @@
         </div>
     </header>
     <main id ="main-content">
-        <!-- Descripción detallada del funcionamiento del código-->
         <section id = "description-content">
-            <h2>Metodo de Insercion</h2>
+            <h2>Metodo de Inserción</h2>
             <p>El ordenamiento por inserción itera a través de un array y, en cada iteración, elimina un elemento, encuentra su ubicación y lo inserta. Si bien tiene una complejidad temporal promedio de O(n²), su rendimiento es excepcional en arrays pequeños o casi ordenados, con un rendimiento óptimo de O(n). El ordenamiento por inserción es un algoritmo adaptativo, estable e in situ que funciona de forma similar a cómo se ordenan las cartas en la mano.</p>
         </section>
-        <!-- Grafico para visualizar el contenido en el array.  También para el ordenamiento del mismo-->
         <section id = "diagram-content">
             <section id = "config-content">
                 <div class = "title-content">
@@ -42,44 +42,58 @@
                 </div>
                 <div class ="radiobox-content">
                     <form>
-                        <label for="velotxt">Velocidad:</label>
-                        <input type="range" id="velotxt" name="velotxt" min="1" max="100" step="5" value="50">
-                        <span class ="placeholder-txt">Velocidad de ordenamiento</span>
-
-                        <label for="datostxt">Datos:</label>
-                        <input type="range" id="datostxt" name="datostxt" min="3" max="10" step="1" value="15">
-                        <span class ="placeholder-txt">Cantidad de datos a ordenar (min. 3)</span>
+                       <div>
+                            <label for="velotxt">Velocidad:</label>
+                            <input type="range" id="velotxt" name="velotxt" min="-100" max="150" step="5" value="50">
+                            <span class ="placeholder-txt">Velocidad de ordenamiento</span>
+                       </div>
+                       <div>
+                            <label for="datostxt">Datos:</label>
+                            <input type="range" id="datostxt" name="datostxt" min="3" max="12" step="1" value="12">
+                            <span class ="placeholder-txt">Cantidad de datos a ordenar (min. 3)</span>
+                       </div>
                     </form>
                 </div>
                 <button id ="randomBtn">Aleatorio</button>
                 <button id = "sortBtn">Desordenar</button>
+                <button id = "stopBtn" disabled>Parar</button>
             </section>
-            <!-- Acá se va a dibujar TODO -->
-            <section id = "graphic-content">
-            
-            </section>
-            <!-- Sección para la parte de configuraciones del gráfico-->
-            <section id = "buttons-content">
-                <div class ="input-content">
-                    <p>Ingrese un valor...</p>
-                    <input type ="number" min ="-200" max ="200" placeholder="1.. 2.. 3.. etc.">
-                </div>
-                <div class = "init-content">
-                    <!-- Apartado para las metricas del ordenamiento-->
-                    <div class = "btn-content">
-                        <button id= "leftBtn"><i class="fa-solid fa-angle-left"></i></button>
-                        <div class = "space">
+            <section id = "container-graphic">
+                <!--Dónde se va a imprimir todo-->
+                <section id = "graphic-content">
+                    
+                </section>
+                <section id = "buttons-content">
+                    
+                    <div class = "init-content">
+                        <div class ="input-content">
+                            <p>Ingrese un valor...</p>
+                            <input type ="number" id = "txtDatos" min ="-200" max ="200" placeholder="1.. 2.. 3.. etc.">
                         </div>
-                        <button id ="startbtn">Iniciar</button>
-                        <div class = "space">
+                        <div class = "btn-content">
+                            <button id= "leftBtn"><i class="fa-solid fa-angle-left"></i></button>
+                            <div class = "space">
+                            </div>
+                            <button id ="startBtn">Iniciar</button>
+                            <div class = "space">
+                            </div>
+                            <button id= "rightBtn"><i class="fa-solid fa-angle-right"></i></button>
                         </div>
-                        <button id= "leftBtn"><i class="fa-solid fa-angle-right"></i></button>
+                        <div class ="progress-content">
+                            <div class = "progress-content-text">
+                                <p>Progreso</p>
+                                <span id = "tiempoText">0 segundos</span>
+                            </div>
+                            <div class = "progressBarContent">
+                                <div class = "progressBar" onclick = "porcentajeClick(event, document.querySelector('.progressBar'))">
+                                </div>
+                                <div class = "progressBarBack" onclick = "porcentajeClick(event, document.querySelector('.progressBarBack'))">
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class ="progress-content">
-                        <p>Progreso</p>
-                        <input type="range" id="rangotxt" name="rangotxt" min="0" max="100" step="1" value="0">
-                    </div>
-                </div>
+                </section>
             </section>
         </section>
     </main>
@@ -95,7 +109,7 @@
             </ul>
         </div>
         <div class = "udb-image">
-
+            <img src = "../icons-image/UDB_gris_horizontal.png">
         </div>
         <div class ="text-content-footer">
             <span>
@@ -104,9 +118,11 @@
         </div>
 
     </footer>
-      <script src="https://unpkg.com/lucide@latest"></script>
+
+       <script src="https://unpkg.com/lucide@latest"></script>
   <script>
     lucide.createIcons();
   </script>
+  <scritp src =  "js/insercion.js"></scritp>
 </body>
 </html>

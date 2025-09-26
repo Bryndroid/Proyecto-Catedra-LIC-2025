@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ordena GX | Seleccion</title>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-      <!--GlobalStyle para el header y footer-->
+     <!--GlobalStyle para el header y footer-->
      <link rel="stylesheet" href="../globalStyle.css">
+     <link rel="stylesheet" href="style.css">
+      <!-- Development version -->
+ <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
 <body>
     <header id = "header-content">
         <div class = "title">
-            <h1 class = "title-txt">Ordena GX | Seleccion</h1>
+            <h1 class = "title-txt">Ordena GX | Selección</h1>
         </div>
         <div class ="space">
 
@@ -29,9 +32,9 @@
     </header>
     <main id ="main-content">
         <section id = "description-content">
-            <h2>Metodo de Seleccion</h2>
-            <p>El algoritmo de ordenamiento por selección (Selection Sort) ordena un arreglo encontrando repetidamente el elemento mínimo de la parte no ordenada y colocándolo al inicio. A diferencia del método de burbuja, realiza solo O(n) intercambios, lo que lo hace útil cuando las operaciones de escritura o intercambio son costosas.
-Sin embargo, su complejidad temporal de O(n²) lo vuelve ineficiente para conjuntos de datos grandes. Además, no es un algoritmo estable, lo que significa que los elementos iguales podrían no mantener sus posiciones relativas.</p>
+            <h2>Metodo de Selección</h2>
+            <p>El algoritmo de ordenamiento por selección (Selection Sort) ordena un arreglo encontrando repetidamente el elemento mínimo de la parte no ordenada y colocándolo al inicio.  A diferencia del método de burbuja, realiza solo O(n) intercambios, lo que lo hace útil cuando las operaciones de escritura o intercambio son costosas.
+            Sin embargo, su complejidad temporal de O(n²) lo vuelve ineficiente para conjuntos de datos grandes.  Además, no es un algoritmo estable, lo que significa que los elementos iguales podrían no mantener sus posiciones relativas.</p>
         </section>
         <section id = "diagram-content">
             <section id = "config-content">
@@ -40,41 +43,58 @@ Sin embargo, su complejidad temporal de O(n²) lo vuelve ineficiente para conjun
                 </div>
                 <div class ="radiobox-content">
                     <form>
-                        <label for="velotxt">Velocidad:</label>
-                        <input type="range" id="velotxt" name="velotxt" min="1" max="100" step="5" value="50">
-                        <span class ="placeholder-txt">Velocidad de ordenamiento</span>
-
-                        <label for="datostxt">Datos:</label>
-                        <input type="range" id="datostxt" name="datostxt" min="3" max="10" step="1" value="15">
-                        <span class ="placeholder-txt">Cantidad de datos a ordenar (min. 3)</span>
+                       <div>
+                            <label for="velotxt">Velocidad:</label>
+                            <input type="range" id="velotxt" name="velotxt" min="-100" max="150" step="5" value="50">
+                            <span class ="placeholder-txt">Velocidad de ordenamiento</span>
+                       </div>
+                       <div>
+                            <label for="datostxt">Datos:</label>
+                            <input type="range" id="datostxt" name="datostxt" min="3" max="12" step="1" value="12">
+                            <span class ="placeholder-txt">Cantidad de datos a ordenar (min. 3)</span>
+                       </div>
                     </form>
                 </div>
                 <button id ="randomBtn">Aleatorio</button>
                 <button id = "sortBtn">Desordenar</button>
+                <button id = "stopBtn" disabled>Parar</button>
             </section>
-            <section id = "graphic-content">
-            
-            </section>
-            <section id = "buttons-content">
-                <div class ="input-content">
-                    <p>Ingrese un valor...</p>
-                    <input type ="number" min ="-200" max ="200" placeholder="1.. 2.. 3.. etc.">
-                </div>
-                <div class = "init-content">
-                    <div class = "btn-content">
-                        <button id= "leftBtn"><i class="fa-solid fa-angle-left"></i></button>
-                        <div class = "space">
+            <section id = "container-graphic">
+                <!--Dónde se va a imprimir todo-->
+                <section id = "graphic-content">
+                    
+                </section>
+                <section id = "buttons-content">
+                    
+                    <div class = "init-content">
+                        <div class ="input-content">
+                            <p>Ingrese un valor...</p>
+                            <input type ="number" id = "txtDatos" min ="-200" max ="200" placeholder="1.. 2.. 3.. etc.">
                         </div>
-                        <button id ="startbtn">Iniciar</button>
-                        <div class = "space">
+                        <div class = "btn-content">
+                            <button id= "leftBtn"><i class="fa-solid fa-angle-left"></i></button>
+                            <div class = "space">
+                            </div>
+                            <button id ="startBtn">Iniciar</button>
+                            <div class = "space">
+                            </div>
+                            <button id= "rightBtn"><i class="fa-solid fa-angle-right"></i></button>
                         </div>
-                        <button id= "leftBtn"><i class="fa-solid fa-angle-right"></i></button>
+                        <div class ="progress-content">
+                            <div class = "progress-content-text">
+                                <p>Progreso</p>
+                                <span id = "tiempoText">0 segundos</span>
+                            </div>
+                            <div class = "progressBarContent">
+                                <div class = "progressBar" onclick = "porcentajeClick(event, document.querySelector('.progressBar'))">
+                                </div>
+                                <div class = "progressBarBack" onclick = "porcentajeClick(event, document.querySelector('.progressBarBack'))">
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class ="progress-content">
-                        <p>Progreso</p>
-                        <input type="range" id="rangotxt" name="rangotxt" min="0" max="100" step="1" value="0">
-                    </div>
-                </div>
+                </section>
             </section>
         </section>
     </main>
@@ -90,7 +110,7 @@ Sin embargo, su complejidad temporal de O(n²) lo vuelve ineficiente para conjun
             </ul>
         </div>
         <div class = "udb-image">
-
+            <img src = "../icons-image/UDB_gris_horizontal.png">
         </div>
         <div class ="text-content-footer">
             <span>
@@ -99,9 +119,11 @@ Sin embargo, su complejidad temporal de O(n²) lo vuelve ineficiente para conjun
         </div>
 
     </footer>
-     <script src="https://unpkg.com/lucide@latest"></script>
+
+       <script src="https://unpkg.com/lucide@latest"></script>
   <script>
     lucide.createIcons();
   </script>
+  <scritp src =  "js/seleccion.js"></scritp>
 </body>
 </html>

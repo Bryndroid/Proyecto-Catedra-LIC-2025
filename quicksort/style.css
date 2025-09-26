@@ -1,0 +1,413 @@
+#lista{
+    display: flex;
+    gap: 20px;
+    text-decoration: none;
+    list-style: none;
+    color: red;
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+}
+#burb{
+    width: fit-content;
+    max-width: 100%;
+    height: 40vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content:start;
+    align-items:end;
+    gap: 40px;
+    padding-left:20px;
+    padding-right:20px ;
+}
+div{
+    transition: background-color, 0.3s;
+}
+.div-seleccionado{
+    background-color: orange !important;
+}
+.div-azul{
+    background-color: blue !important;
+    color: aliceblue !important;
+    animation-name: desplazamiento;
+    animation-timing-function: linear;
+     animation-duration: 0.5s;
+     /*Para que se quede dónde se animó*/
+     animation-fill-mode: forwards;
+}
+
+@keyframes desplazamiento {
+  0% {
+    transform: translateX(0px);
+    background-color: blue;
+  }
+  50% {
+    transform: translateX(40px);
+    background-color: blue;
+  }
+  100% {
+    transform: translateX(75px);
+    background-color: red; /* se va interpolando, no salta */
+  }
+}
+.div-verde{
+    background-color: green !important;
+     animation-name: desplazamiento-inverso;
+    animation-timing-function: linear;
+     animation-duration: 0.5s;
+       /*Para que se quede dónde se animó*/
+     animation-fill-mode: forwards;
+}
+@keyframes desplazamiento-inverso{
+    /*Como empieza la animación*/
+    0%{
+       transform: translateX(-0px);
+    }
+    /*Como termina*/
+    50%{
+       transform: translateX(-40px);
+    }
+    100%{
+        transform: translateX(-75px);
+        background-color: red!important;
+    }
+}
+.cnt{
+   
+}
+.textoGraphic{
+  width: 100%;
+}
+
+/*------------ESTILOS-----------*/
+#main-content{
+
+  background-color: #7681F9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap:10px;
+  padding: 15px;
+  padding-top: 35px;
+  padding-bottom: 100px;
+}
+#description-content{
+  background: #fff;
+	color: #23264a;
+	border-radius: 16px;
+	box-shadow: 0 4px 16px 0 rgba(0,0,0,0.07);
+	padding: 32px 40px;
+	margin-bottom: 36px;
+	text-align: center;
+	max-width: 1400px;
+  /* text-align: center;
+  line-height: 1.2;a
+  background-color: #FFFFFF;
+  width: 80%;
+  padding: 25px;
+  border-radius:10px; */
+}
+#description-content h2{
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#description-content p{
+  font-size: 20px;
+}
+
+#diagram-content{
+  display: flex;
+	gap: 40px;
+	align-items:center;
+	justify-content: center;
+  flex-wrap: wrap;
+	width: 100%;
+  /* width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  gap:10px; */
+}
+
+#config-content{
+  background-color: #18207E;
+  border-radius: 18px;
+	padding: 36px 36px;
+	min-width: 340px;
+	max-width: 440px;
+	flex: 1 1 340px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  color: aliceblue;
+	box-shadow: 0 6px 24px 0 rgba(0,0,0,0.13);
+}
+.title-content h5{
+  font-size: 1.3rem;
+	font-weight: 700;
+	margin-bottom: 18px;
+	color: #fff;
+	text-shadow: 0 2px 8px #23264a;
+}
+
+label, input, .placeholder-txt {
+    display: block;
+    margin-bottom: 8px;
+    font-family: Arial, sans-serif;
+}
+
+
+#velotxt, #datostxt {
+    -webkit-appearance: none; 
+    width: 100%;
+    height: 8px;
+    background: #b3e0ff;  
+    border-radius: 5px;
+    outline: none;
+    margin: 10px 0;
+}
+
+
+#velotxt::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #000; 
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #555;
+}
+#datostxt::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #000; 
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #555;
+ 
+}
+#velotxt::-webkit-slider-thumb:hover {
+  background: #333;
+}
+/*Este para responsive que abarque el 100% de width*/
+#container-graphic{
+  width:60%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.placeholder-txt {
+  font-size: 0.9em;
+  color: #444;
+}
+form{
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px
+}
+
+.radiobox-content{
+  width: 100%;
+	margin-bottom: 18px;
+}
+.radiobox-content label {
+	font-weight: 600;
+	color: #fff;
+}
+#config-content{
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.radiobox-content form label:nth-of-type(2){
+  margin-top: 40px;
+}
+
+#randomBtn, #sortBtn, #stopBtn, #cambioBtn{
+  width: 100%;
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  border: 7px solid;
+  background-color: rgba(240, 248, 255, 0.404);
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  margin-bottom: 30px;
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.25);
+}
+/*------------------------------------*/
+#graphic-content{
+  background: #fff;
+	border-radius: 18px;
+	box-shadow: 0 6px 24px 0 rgba(59,62,109,0.13);
+	padding: 36px 28px 28px 28px;
+	min-width: 340px;
+	max-width: 100%;
+	width: 100%;
+	height: 320px;
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-start;
+	gap: 18px;
+	overflow-x: auto;
+	overflow-y: hidden;
+	margin-bottom: 24px;
+}
+/*--------ESTILO PARA LOS CONTENEDORES ------------*/
+#graphic-content > div {
+	min-width: 32px;
+	max-width: 56px;
+	border-radius: 10px 10px 0 0;
+	margin: 0 3px;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	font-size: 1rem;
+	font-weight: 700;
+	color: #23264a;
+	background: #6ee7b7;
+	box-shadow: 0 2px 8px 0 rgba(59,62,109,0.08);
+	transition: background-color 0.3s, box-shadow 0.2s;
+	overflow: hidden;
+  min-height: 20px;
+	height: auto;
+	flex: 1 1 auto;
+	max-height: 100%;
+}
+#buttons-content{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 20px;
+}
+#buttons-content .input-content p{
+  font-weight: bold;
+  font-size: 24px;
+}
+.input-content{
+  background-color: aliceblue;
+  width: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.input-content input{
+  width: 20%;
+  min-width: 300px;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 10px;
+}
+.init-content{
+  background-color: aliceblue;
+  padding: 25px;
+  width: 100%;
+}
+.btn-content button{
+  width: 40px;
+  height: 40px;
+}
+.btn-content{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+#startBtn{
+  padding: 10px;
+  width: fit-content !important;
+  border-radius: 10px;
+  background-color: rgba(0, 128, 0, 0.884);
+  font-weight: bold;
+  color: aliceblue;
+}
+
+#leftBtn, #rightBtn{
+  background-color: rgba(128, 0, 128, 0.473);
+  color: aliceblue;
+  border: 2px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.progress-content{
+  padding-top: 10px;
+  width: 100%;
+}
+.progress-content input{
+ -webkit-appearance: none; /* Quita estilo por defecto */
+  width: 100%;
+  height: 8px;
+  border-radius: 10px;
+  background: #e5e7eb; /* gris claro */
+  outline: none;
+}
+.progressBarContent{
+  margin-top: 10px;
+  width: 100%;
+  z-index: 20;
+  position: relative;
+}
+.progressBar{
+  width: 0%;
+  height: 10px;
+  border-radius: 10px;
+  background-color: blue;
+}
+.progressBarBack{
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 10px;
+  border-radius: 10px;
+  background-color: gray;
+}
+
+/*-------------------MODAL----------------*/
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #444;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: red;
+}
+.progress-content-text{
+  display: flex;
+  justify-content: space-between;
+}
