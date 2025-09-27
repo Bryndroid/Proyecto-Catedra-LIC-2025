@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const randomBtn = document.getElementById('randomBtn');
     const sortBtn = document.getElementById('sortBtn');
     const startBtn = document.getElementById('startBtn');
+    const stopBtn = document.querySelector("#stopBtn")
     const veloSlider = document.getElementById('velotxt');
     const datosSlider = document.getElementById('datostxt');
     const inputValor = document.querySelector('.input-content input');
@@ -110,13 +111,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // Iniciar animación
     startBtn.onclick = () => {
         if (sorting) return;
+        desactBtn(true);
         pasos = generarPasos(datos);
         pasoActual = 0;
         sorting = true;
         progress.max = pasos.length - 1;
         avanzarPaso();
+      
     };
-
+    function desactBtn(boolean){
+        stopBtn.disabled = !boolean;
+        randomBtn.disabled = boolean;
+        sortBtn.disabled = boolean;
+        inputValor.disabled  = boolean;
+    }
     function avanzarPaso() {
         if (!sorting || pasoActual >= pasos.length) {
             sorting = false;
@@ -128,7 +136,10 @@ document.addEventListener('DOMContentLoaded', () => {
         progress.value = pasoActual;
         pasoActual++;
         interval = setTimeout(avanzarPaso, velocidad * 5 + 20);
-        if (pasoActual >= pasos.length) sorting = false;
+        if (pasoActual >= pasos.length){
+            sorting = false;
+            desactBtn(false);
+        };
     }
 
     // Slider de progreso manual
