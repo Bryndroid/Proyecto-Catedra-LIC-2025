@@ -77,6 +77,23 @@
     height: 261px;
     position: relative;
     z-index: 1;
+    transition: all 0.1s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(2, 37, 86, 0.808), 
+    0 0 25px rgba(255, 255, 255, 0.747);
+}
+
+
+.card .content-i{
+  position: absolute;
+  width: fit-content;
+  top: 0%;
+  width: 100%;
+  height: 80%;
+  z-index:-1;
 }
 .card .content-i{
   position: absolute;

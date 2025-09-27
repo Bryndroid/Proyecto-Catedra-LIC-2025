@@ -1,6 +1,6 @@
 'use strict'
 //ARRAY CONTENEDOR
-let numerosBurbuja  =[1,16,22,34,44444,512,69,80 ,44444,512,69,80];
+let numerosBurbuja  =[1,16,22,34,44,512,69,80,512,0,333, 219];
 //LIENZO
 let main = document.getElementById("graphic-content");
 //VARIABLES DE CONTROL
@@ -140,7 +140,7 @@ function limpiartodo(){
     if(iteracion == 0)
     progressBar(iteracion);
     tiempoSecond = 0;
-    document.querySelector("#tiempoText").innerHTML = tiempoSecond + " segundos"
+    document.querySelector("#tiempoText").innerHTML = "Tiempo: "+  tiempoSecond + " s"
 }
 function limpiarMain(){
     main.innerHTML = "";
@@ -198,7 +198,7 @@ botonDesordenar.addEventListener("click",()=>{
 });
 
 inputVelo.addEventListener("change", ()=>{
-    velocidadCustom = parseInt(inputVelo.value) *3.5;
+    velocidadCustom = -(parseInt(inputVelo.value) *3.5);
 
 })
 inputDatos.addEventListener("change", ()=>{

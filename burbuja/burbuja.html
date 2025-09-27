@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!--GlobalStyle para el header y footer-->
      <link rel="stylesheet" href="../globalStyle.css">
+     <link rel="icon" type="image/png" href="../icons-image/icon-web.png">
       <!-- Development version -->
  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
@@ -61,7 +62,7 @@
                     <form>
                        <div>
                             <label for="velotxt">Velocidad:</label>
-                            <input type="range" id="velotxt" name="velotxt" min="-100" max="150" step="5" value="50">
+                            <input type="range" id="velotxt" name="velotxt" min="-150" max="100" step="5" value="50">
                             <span class ="placeholder-txt">Velocidad de ordenamiento</span>
                        </div>
                        <div>
@@ -98,8 +99,8 @@
                         </div>
                         <div class ="progress-content">
                             <div class = "progress-content-text">
-                                <p>Progreso</p>
-                                <span id = "tiempoText">0 segundos</span>
+                                <p>Progreso Iteraciones: </p>
+                                <span id = "tiempoText">Tiempo: 0 s</span>
                             </div>
                             <div class = "progressBarContent">
                                 <div class = "progressBar" onclick = "porcentajeClick(event, document.querySelector('.progressBar'))">
