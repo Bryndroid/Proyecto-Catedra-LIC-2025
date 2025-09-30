@@ -12,7 +12,7 @@ const tiempoText = document.getElementById('tiempoText');
 let datos = [];
 let interval = null;
 let sorting = false;
-let velocidad = 50;
+let velocidad = 0;
 let cantidad = 12;
 let tiempo = 0;
 let ultimoIngresado = null; // Para resaltar el último número ingresado
@@ -91,14 +91,14 @@ async function selectionSortAnimado() {
             progresoBarra.value = porcentaje;
         }
         renderDatos(i, minIdx);
-        await sleep(velocidad);
+        await sleep(300 +  velocidad);
         for (let j = i + 1; j < datos.length && sorting; j++) {
             renderDatos(j, minIdx);
-            await sleep(velocidad);
+            await sleep(450 + velocidad);
             if (datos[j] < datos[minIdx]) {
                 minIdx = j;
                 renderDatos(j, minIdx);
-                await sleep(velocidad);
+                await sleep(300 + velocidad);
             }
         }
         if (minIdx !== i) {
@@ -107,7 +107,7 @@ async function selectionSortAnimado() {
             tiempoText.textContent = `${tiempo} segundos`;
         }
         renderDatos(i, minIdx);
-        await sleep(velocidad);
+        await sleep(300 + velocidad);
     }
 
         // Barra al 100% al finalizar
@@ -145,8 +145,7 @@ stopBtn.onclick = () => {
 
 velotxt.oninput = (e) => {
     // Ahora el rango será de 100ms (rápido) a 1000ms (lento)
-    velocidad = 1000 - parseInt(e.target.value, 10) * 6;
-    if (velocidad < 100) velocidad = 100;
+    velocidad = -(parseInt(e.target.value) *3.5);
 };
 
 datostxt.oninput = (e) => {

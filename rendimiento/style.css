@@ -1,0 +1,580 @@
+/* Estilo bonito para la lista de números actual */
+#current-list {
+  display: inline-block;
+  background: linear-gradient(90deg, #ffe5d0 60%, #ffd6b3 100%);
+  color: #c0392b;
+  font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
+  font-size: 1.15rem;
+  padding: 8px 18px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(255,127,80,0.08);
+  letter-spacing: 1px;
+  margin-left: 10px;
+  border: 1.5px solid #ffb07c;
+  transition: box-shadow 0.2s;
+}
+#current-list:hover {
+  box-shadow: 0 4px 16px rgba(255,127,80,0.18);
+  background: linear-gradient(90deg, #ffd6b3 60%, #ffe5d0 100%);
+}
+/* Tabla de métricas estilo imagen */
+#table-area {
+  background: #ffe5d0;
+  border-radius: 12px;
+  padding: 18px 12px 8px 12px;
+  margin: 0 auto 24px auto;
+  max-width: 900px;
+  box-shadow: none;
+}
+#table-area table {
+  width: 100%;
+  border-collapse: collapse;
+  background: transparent;
+  font-family: Arial, sans-serif;
+  font-size: 1.05rem;
+  color: #222;
+}
+#table-area th {
+  background: transparent;
+  color: #222;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px 8px 10px 8px;
+  border: none;
+}
+#table-area td {
+  background: transparent;
+  color: #222;
+  text-align: center;
+  padding: 8px 6px;
+  border: none;
+}
+#table-area tr {
+  border-radius: 8px;
+}
+#table-area tr:nth-child(even) td {
+  background: #ffd6b3;
+}
+#table-area tr:nth-child(odd) td {
+  background: #ffe5d0;
+}
+/* Slider de progreso activo */
+.progreso-activo::-webkit-slider-thumb {
+  background: #ff7f50 !important;
+  border: 2px solid #c0392b !important;
+}
+.progreso-activo::-moz-range-thumb {
+  background: #ff7f50 !important;
+  border: 2px solid #c0392b !important;
+}
+.progreso-activo::-ms-thumb {
+  background: #ff7f50 !important;
+  border: 2px solid #c0392b !important;
+}
+.progreso-activo {
+  accent-color: #ff7f50 !important;
+}
+#lista{
+    display: flex;
+    gap: 20px;
+    text-decoration: none;
+    list-style: none;
+    color: red;
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+}
+#burb{
+    width: fit-content;
+    max-width: 100%;
+    height: 40vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content:start;
+    align-items:end;
+    gap: 40px;
+    padding-left:20px;
+    padding-right:20px ;
+}
+div{
+    transition: background-color, 0.3s;
+}
+.div-seleccionado{
+    background-color: orange !important;
+}
+.div-azul{
+    background-color: blue !important;
+    color: aliceblue !important;
+    animation-name: desplazamiento;
+    animation-timing-function: linear;
+     animation-duration: 0.5s;
+     /*Para que se quede dónde se animó*/
+     animation-fill-mode: forwards;
+}
+
+@keyframes desplazamiento {
+  0% {
+    transform: translateX(0px);
+    background-color: blue;
+  }
+  50% {
+    transform: translateX(40px);
+    background-color: blue;
+  }
+  100% {
+    transform: translateX(75px);
+    background-color: red; /* se va interpolando, no salta */
+  }
+}
+.div-verde{
+    background-color: green !important;
+     animation-name: desplazamiento-inverso;
+    animation-timing-function: linear;
+     animation-duration: 0.5s;
+       /*Para que se quede dónde se animó*/
+     animation-fill-mode: forwards;
+}
+@keyframes desplazamiento-inverso{
+    /*Como empieza la animación*/
+    0%{
+       transform: translateX(-0px);
+    }
+    /*Como termina*/
+    50%{
+       transform: translateX(-40px);
+    }
+    100%{
+        transform: translateX(-75px);
+        background-color: red!important;
+    }
+}
+.cnt{
+   
+}
+.textoGraphic{
+  width: 100%;
+}
+
+/*------------ESTILOS-----------*/
+#main-content{
+  background: #fd6229;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap:10px;
+  padding: 0;
+  padding-bottom: 100px;
+}
+/* Header styles */
+#header-content {
+  padding-bottom: 0;
+}
+#description-content{
+  background: #fff;
+  color: #23264a;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.07);
+  padding: 32px 20px;
+  margin-bottom: 0;
+  margin-top: 32px;
+  text-align: center;
+  max-width: 1400px;
+  /* text-align: center;
+  line-height: 1.2;a
+  background-color: #FFFFFF;
+  width: 80%;
+  padding: 25px;
+  border-radius:10px; */
+}
+#description-content h2{
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#description-content p{
+  font-size: 20px;
+}
+
+#diagram-content{
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 0 !important;
+  /* width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  gap:10px; */
+} 
+#results-panel{
+  width: 100%;
+}
+
+#config-content{
+  background-color: #5360B3;
+  border-radius: 18px;
+  padding: 36px 36px;
+  width: 50em;
+  height: fit-content;
+  flex-shrink: 0;
+  display: flex;
+  align-items: start;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  box-shadow: 0 6px 24px 0 rgba(0,0,0,0.13);
+}
+.title-content h5{
+  font-size: 1.3rem;
+	font-weight: 700;
+	margin-bottom: 18px;
+	color: #fff;
+	text-shadow: 0 2px 8px #23264a;
+}
+
+label, input, .placeholder-txt {
+    display: block;
+    margin-bottom: 8px;
+    font-family: Arial, sans-serif;
+}
+
+
+#velotxt, #datostxt {
+    -webkit-appearance: none; 
+    width: 100%;
+    height: 8px;
+    background: #b3e0ff;  
+    border-radius: 5px;
+    outline: none;
+    margin: 10px 0;
+}
+
+
+#velotxt::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #000; 
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #555;
+}
+#datostxt::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #000; 
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #555;
+ 
+}
+#velotxt::-webkit-slider-thumb:hover {
+  background: #333;
+}
+/*Este para responsive que abarque el 100% de width*/
+#container-graphic{
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0 !important;
+  justify-content: space-around;
+
+}
+#graphic-content{
+  width: 100%;
+}
+.placeholder-txt {
+  font-size: 0.9em;
+  color: #444;
+}
+form{
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px
+}
+
+.radiobox-content{
+  width: 100%;
+	margin-bottom: 18px;
+}
+.radiobox-content label {
+	font-weight: 600;
+	color: #fff;
+}
+
+.radiobox-content form label:nth-of-type(2){
+  margin-top: 40px;
+}
+
+#randomBtn, #sortBtn, #stopBtn, #cambioBtn, #runBenchmarkConfig{
+  width: 30%;
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  border: 7px solid;
+  background-color: rgba(240, 248, 255, 0.404);
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  margin-bottom: 30px;
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.25);
+}
+/*------------------------------------*/
+/* El grid debe aplicarse al contenedor de las gráficas */
+/* Grid fijo 2-2-1 para las gráficas, sin responsive */
+ #panels-graphics {
+  width: 100%;
+  min-width: 0;
+  margin-bottom: 4vw;
+  background: none;
+  border-radius: 0;
+}
+#panels-graphics > div {
+  width: 100%;
+  min-width: 180px;
+  height: 100%;
+  min-height: 180px;
+  max-height: 340px;
+  margin: 0 auto;
+  box-shadow: 11px 9px 2px rgba(255, 0, 0, 0.11);
+}
+/* 1a y 2a gráficas arriba */
+#panels-graphics > div:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+#panels-graphics > div:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+}
+/* 3a y 4a gráficas en la segunda fila */
+#panels-graphics > div:nth-child(3) {
+  grid-column: 1;
+  grid-row: 2;
+}
+#panels-graphics > div:nth-child(4) {
+  grid-column: 2;
+  grid-row: 2;
+}
+/* 5a gráfica centrada en la tercera fila */
+#panels-graphics > div:nth-child(5) {
+  grid-column: 1 / span 2;
+  grid-row: 3;
+  justify-self: center;
+}
+
+@media (max-width: 900px) {
+  #panels-graphics {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, minmax(180px, 1fr));
+    gap: 4vw 0;
+    max-width: 98vw;
+  }
+  #panels-graphics > div {
+    max-width: 98vw;
+    min-width: 0;
+  }
+  #panels-graphics > div:nth-child(5) {
+    grid-column: 1;
+    grid-row: 5;
+    justify-self: center;
+  }
+}
+
+/* Centrar la última gráfica en la tercera fila */
+#panels-graphics > div:nth-child(5) {
+  grid-column: 1 / span 2;
+  justify-self: center;
+}
+
+/*--------ESTILO PARA LOS CONTENEDORES ------------*/
+/* Ajuste para los contenedores de cada gráfica */
+#clearTableBtn {
+  width: 30%;
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  border: 7px solid;
+  background-color: rgba(240, 248, 255, 0.404);
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  margin-bottom: 30px;
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.25);
+  color: #111;
+  text-align: center;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+#config-content, #buttons-content{
+  margin-top: 20px !important;
+  box-shadow: 11px 9px 2px rgba(255, 0, 0, 0.11);
+}
+#buttons-content{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: fit-content;
+}
+#buttons-content .input-content p{
+  font-weight: bold;
+  font-size: 24px;
+}
+.input-content{
+  background-color: aliceblue;
+  width: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.input-content input{
+  width: 20%;
+  min-width: 300px;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 10px;
+}
+.init-content{
+  background-color: aliceblue;
+  padding: 25px;
+  width: 100%;
+}
+.btn-content button{
+  width: 40px;
+  height: 40px;
+}
+.btn-content{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+#startBtn{
+  padding: 10px;
+  width: fit-content !important;
+  border-radius: 10px;
+  background-color: rgba(0, 128, 0, 0.884);
+  font-weight: bold;
+  color: aliceblue;
+}
+
+#leftBtn, #rightBtn{
+  background-color: rgba(128, 0, 128, 0.473);
+  color: aliceblue;
+  border: 2px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.progress-content{
+  padding-top: 10px;
+  width: 100%;
+}
+.progress-content input{
+ -webkit-appearance: none; /* Quita estilo por defecto */
+  width: 100%;
+  height: 8px;
+  border-radius: 10px;
+  background: #e5e7eb; /* gris claro */
+  outline: none;
+}
+.progressBarContent{
+  margin-top: 10px;
+  width: 100%;
+  z-index: 20;
+  position: relative;
+}
+.progressBar{
+  width: 0%;
+  height: 10px;
+  border-radius: 10px;
+  background-color: blue;
+}
+.progressBarBack{
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 10px;
+  border-radius: 10px;
+  background-color: gray;
+}
+
+/* DARK MODEEE*/
+.dark-mode-title{
+    background-color: rgb(31, 30, 30) !important;
+    color: aliceblue !important;
+}
+/*Este cambia por algoritmo*/
+.dark-mode-main{
+  background-color: #7F3F28!important;
+}
+.dark-mode-table{
+  background-color: rgba(104, 102, 102, 0.8) !important;
+}
+.dark-mode-config{
+  background-color: #010f2a !important;
+  color: aliceblue !important;
+}
+.card-dark-mode{
+    background: linear-gradient(to top, #010f2a, #3d3d3d) !important;
+    color: aliceblue !important;
+}
+.btn-dark-mode{
+    background-color: #5C0070 !important;
+}
+.border-color-dark-mode{
+    border-color: aliceblue !important;
+}
+
+.dark-mode-gray{
+  background-color: #444 !important;
+  color: aliceblue !important;
+}
+
+.dark-mode-divs{
+  background-color: #2F8C74 !important;
+  color: aliceblue !important;
+}
+
+.text-content-dark-mode{
+  background-color: #1A1A1A !important;
+  color: aliceblue !important;
+}
+@media (max-width: 890px){
+  #diagram-content{
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+  #container-graphic{
+    width: 100%;
+  }
+  #config-content{
+    width: 100%;
+  }
+
+  #current-list{
+    width: 100%;
+    overflow: auto;
+  }
+  
+}

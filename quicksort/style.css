@@ -1,3 +1,12 @@
+/* Barra mayor al pivote (rojo) */
+.div-rojo {
+  background-color: red !important;
+  color: #fff !important;
+  animation-name: desplazamiento-inverso;
+  animation-timing-function: linear;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
 #lista{
     display: flex;
     gap: 20px;
@@ -26,6 +35,20 @@ div{
 }
 .div-seleccionado{
     background-color: orange !important;
+    position: relative;
+}
+.div-pivote-primero{
+  background-color: rgb(231, 6, 6) !important;
+}
+.div-pivote-primero::before{
+  content: "★" !important;
+  position: absolute !important;
+  top: 8px !important;
+  right: 8px !important;
+  font-size: 18px !important;
+  color: gold !important;
+  pointer-events: none !important;
+  transform: translateZ(0) !important;
 }
 .div-azul{
     background-color: blue !important;
@@ -40,15 +63,15 @@ div{
 @keyframes desplazamiento {
   0% {
     transform: translateX(0px);
-    background-color: blue;
+    background-color: blue !important;
   }
   50% {
     transform: translateX(40px);
-    background-color: blue;
+    background-color: blue !important;
   }
   100% {
     transform: translateX(75px);
-    background-color: red; /* se va interpolando, no salta */
+    background-color: blue !important;
   }
 }
 .div-verde{
@@ -59,14 +82,25 @@ div{
        /*Para que se quede dónde se animó*/
      animation-fill-mode: forwards;
 }
+/* Div mayores */
+.div-pivote-mayor{
+  background-color: rgb(241, 245, 9) !important;
+  color: black !important;
+}
+/* Div menores */
+.div-pivote-menor{
+  background-color: #544988 !important;
+  color: aliceblue !important;
+}
 @keyframes desplazamiento-inverso{
     /*Como empieza la animación*/
     0%{
        transform: translateX(-0px);
+       background-color: red!important;
     }
-    /*Como termina*/
     50%{
        transform: translateX(-40px);
+       background-color: red!important;
     }
     100%{
         transform: translateX(-75px);
@@ -205,6 +239,14 @@ label, input, .placeholder-txt {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  position: relative;
+}
+.modal-explicación-icon{
+  position: absolute;
+  cursor:pointer
+}
+.modal-explicación-icon .icon-headers{
+  width: 35px !important;
 }
 
 .placeholder-txt {
@@ -411,3 +453,50 @@ form{
   display: flex;
   justify-content: space-between;
 }
+
+/* DARK MODEEE*/
+.dark-mode-title{
+    background-color: rgb(31, 30, 30) !important;
+    color: aliceblue !important;
+}
+/*Este cambia por algoritmo*/
+.dark-mode-main{
+  background-color: #20225e!important;
+}
+.dark-mode-config{
+  background-color: #0D1040 !important;
+  color: aliceblue !important;
+}
+.card-dark-mode{
+    background: linear-gradient(to top, #010f2a, #3d3d3d) !important;
+    color: aliceblue !important;
+}
+.btn-dark-mode{
+    background-color: #5C0070 !important;
+}
+.border-color-dark-mode{
+    border-color: aliceblue !important;
+}
+
+.dark-mode-divs{
+  background-color: #2F8C74 !important;
+  color: aliceblue !important;
+}
+
+.text-content-dark-mode{
+  background-color: #1A1A1A !important;
+  color: aliceblue !important;
+}
+
+@media (max-width: 890px){
+  #diagram-content{
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+  #container-graphic{
+    width: 100%;
+  }
+
+  
+}
+

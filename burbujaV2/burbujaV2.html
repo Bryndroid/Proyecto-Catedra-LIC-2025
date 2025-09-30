@@ -4,13 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ordena GX | BurbujaV2</title>
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-     <!--GlobalStyle para el header y footer-->
-     <link rel="stylesheet" href="../globalStyle.css">
-     <link rel="stylesheet" href="style.css">
-     <link rel="icon" type="image/png" href="../icons-image/icon-web.png">
-      <!-- Development version -->
- <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+      <!--ESTILOS-->
+    <link rel="stylesheet" href="style.css">
+    <!--GlobalStyle para el header y footer-->
+    <link rel="stylesheet" href="../globalStyle.css">
+    <!--FontAwesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sondnpt00343/popzy@v1.0.1/popzy.min.css">
+    <!--Estilo del modal-->
+    <link rel="stylesheet" href="../styleModal.css">
+    <!--ICON-->
+    <link rel="icon" type="image/png" href="../icons-image/icon-web.png">
+    <!--SCRIPTS CDNs-->
+    <!-- Development version -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <!--Modal librería-->
+    <script src="https://cdn.jsdelivr.net/gh/sondnpt00343/popzy@v1.0.1/popzy.min.js"></script>
 </head>
 <body>
      <header id = "header-content">
@@ -24,9 +33,9 @@
             <div class = "namespace-content">
                 <h3>Proyecto Catedra LIC-2025</h3>
             </div>
-             <i  class = "icon-headers" data-lucide="user-round-search"></i>
+             <i  class = "icon-headers" data-lucide="user-round-search" onclick="abrirModal()"></i>
             <!--Para cambiar de color dependiendoo si es modo noche o día-->
-            <div class ="moon-sun">
+            <div class ="moon-sun" onclick = "cambioColor()">
                 <i class = "icon-headers" data-lucide="eclipse"></i>
             </div>
         </div>
@@ -72,13 +81,12 @@
                             <input type ="number" id = "txtDatos" min ="-200" max ="200" placeholder="1.. 2.. 3.. etc.">
                         </div>
                         <div class = "btn-content">
-                            <button id= "leftBtn"><i class="fa-solid fa-angle-left"></i></button>
+
                             <div class = "space">
                             </div>
                             <button id ="startBtn">Iniciar</button>
                             <div class = "space">
                             </div>
-                            <button id= "rightBtn"><i class="fa-solid fa-angle-right"></i></button>
                         </div>
                        <div class ="progress-content">
                             <p>Progreso</p>
@@ -89,32 +97,40 @@
             </section>
         </section>
     </main>
-    <footer id = "footer-content">
-        <div class ="integrantes-content-footer">
-            <h5>Desarolladores</h5>
-            <ul>
-                <li>Bryan Josué Fuentes Molina</li>
-                <li>Adal Isaac Carcamo Sanchez</li>
-                <li>Hector Vicenzo Rodriguez Vaquerano</li>
-                <li>Fernando Jose Lopez Dominguez</li>
-                <li>Inmer Sebastian Hernandez Contreras</li>
-            </ul>
-        </div>
-        <div class = "udb-image">
-            <img src = "../icons-image/UDB_gris_horizontal.png">
-        </div>
-        <div class ="text-content-footer">
-            <span>
-                El presente proyecto consiste en el desarrollo de una página web interactiva cuyo objetivo principal es ilustrar, de manera didáctica y visual, el funcionamiento de diversos algoritmos de ordenamiento. La plataforma fue diseñada para el proyecto de catedra para la materia de Lenguaje interpretado en el Cliente, esperemos aprendan :)
-            </span>
-        </div>
-
-    </footer>
+    <!-- =================== PIE DE PÁGINA =================== -->
+    
+        <template id="my-modal-template">
+            <div id ="popzy__content">
+                <article id = "container-modal">
+                    <div class = "container-header">
+                        <h2>UNIVERSIDAD DON BOSCO</h2>
+                    </div>
+                    <div class = "container-integrantes">
+                        <h5>Desarrolladores: </h5>
+                        <ul>
+                            <li>Bryan Josué Fuentes Molina</li>
+                            <li>Adal Isaac Carcamo Sanchez</li>
+                            <li>Hector Vicenzo Rodriguez Vaquerano</li>
+                            <li>Fernando Jose Lopez Dominguez</li>
+                            <li>Inmer Sebastian Hernandez Contreras</li>
+                        </ul>
+                        <p>Ciclo 02 2025</p>
+                        <p>Escuela de Computación. Facultad de Ingeniería</p>
+                        <small>“La verdadera sabiduría está en reconocer la propia ignorancia.” -Sócrates</small>
+                    </div>
+                    <div class = "container-footer">
+                    </div>
+                </article>
+            </div>
+        </template>
+          <script src = "../modal.js">
+  </script>
 
        <script src="https://unpkg.com/lucide@latest"></script>
   <script>
     lucide.createIcons();
   </script>
   <script src = "js/burbujaV2.js"></script>
+  <script src = "../script.js"></script>
 </body>
 </html>
