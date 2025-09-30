@@ -8,6 +8,7 @@
 *{
     box-sizing: border-box;
     padding: 0;
+    transition: all 0.3s ease-in;
 }
 #burb{
     width: fit-content;
@@ -409,4 +410,57 @@ form{
 .progress-content-text{
   display: flex;
   justify-content: space-between;
+}
+
+/* DARK MODEEE*/
+.dark-mode-title{
+    background-color: rgb(31, 30, 30) !important;
+    color: aliceblue !important;
+}
+/*Este cambia por algoritmo*/
+.dark-mode-main{
+  background-color: #034045 !important;
+}
+.card-dark-mode{
+    background: linear-gradient(to top, #010f2a, #3d3d3d) !important;
+    color: aliceblue !important;
+}
+.btn-dark-mode{
+    background-color: #5C0070 !important;
+}
+.border-color-dark-mode{
+    border-color: aliceblue !important;
+}
+.div-container-dark-mode{
+  background-color: #2F8C74 !important;
+  color: aliceblue !important;
+}
+.dark-mode-config{
+  background-color: #3E5F71 !important;
+  color: aliceblue !important;
+}
+.dark-mode-divs{
+  background-color: #2F8C74 !important;
+  color: aliceblue !important;
+}
+
+.text-content-dark-mode{
+  background-color: #1A1A1A !important;
+  color: aliceblue !important;
+}
+/* RESPONSIVE */
+
+@media (max-width: 890px){
+  #diagram-content{
+    flex-direction: column-reverse;
+    width: 100%;
+
+  }
+  #container-graphic{
+    width: 100%;
+  }
+  #graphic-content{
+  
+  }
+  
 }

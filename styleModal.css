@@ -1,0 +1,28 @@
+.container-header{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+#container-modal{
+    width: 100%;
+    position: relative;
+
+}
+.container-integrantes h5{
+    font-weight: bold;
+    font-size: 17px;
+}
+.container-integrantes p{
+    font-size:14px;
+
+}
+li{
+    font-style: italic;
+    margin: 10px;
+    font-weight: 800;
+}
+.container-integrantes p{
+    font-size: 12px;
+    font-style: italic;
+}

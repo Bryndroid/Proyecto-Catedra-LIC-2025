@@ -410,3 +410,48 @@ form{
   display: flex;
   justify-content: space-between;
 }
+
+/* DARK MODEEE*/
+.dark-mode-title{
+    background-color: rgb(31, 30, 30) !important;
+    color: aliceblue !important;
+}
+/*Este cambia por algoritmo*/
+.dark-mode-main{
+  background-color: #5C5931!important;
+}
+.dark-mode-config{
+  background-color: #462E18!important;
+  color: aliceblue !important;
+}
+.card-dark-mode{
+    background: linear-gradient(to top, #010f2a, #3d3d3d) !important;
+    color: aliceblue !important;
+}
+.btn-dark-mode{
+    background-color: #5C0070 !important;
+}
+.border-color-dark-mode{
+    border-color: aliceblue !important;
+}
+
+.dark-mode-divs{
+  background-color: #2F8C74 !important;
+  color: aliceblue !important;
+}
+
+.text-content-dark-mode{
+  background-color: #1A1A1A !important;
+  color: aliceblue !important;
+}
+@media (max-width: 890px){
+  #diagram-content{
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+  #container-graphic{
+    width: 100%;
+  }
+
+  
+}
