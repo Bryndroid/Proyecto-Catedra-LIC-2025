@@ -311,4 +311,5 @@ function inicializadores(){
     precomputarBurbuja();
     dibujar();
 }
+
 inicializadores();
