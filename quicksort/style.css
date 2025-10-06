@@ -39,6 +39,7 @@ div{
 }
 .div-pivote-primero{
   background-color: rgb(231, 6, 6) !important;
+  position: relative;
 }
 .div-pivote-primero::before{
   content: "★" !important;
